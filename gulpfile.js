@@ -47,6 +47,12 @@ gulp.task('copy-index', function () {
     .on('end', ()=> {beep([250,250])})
 })
 
+gulp.task('copy-couchmover', function () {
+  return gulp.src(publicFolder + 'couchmover.html')
+    .pipe(gulpSSH.sftp('write', '/library/www/html/home/couchmover.html'))
+    .on('end', ()=> {beep([250,250])})
+})
+
 // -------- Node Backend Tool -------- //
 
 gulp.task('copy-modules', function () {
@@ -79,6 +85,7 @@ gulp.task('watch', function() {
   gulp.watch(publicFolder + 'css/**/*.css', ['copy-css']);
   gulp.watch(publicFolder + 'js/**/*.js', ['copy-js']);
   gulp.watch(publicFolder + 'index.html', ['copy-index']);
+  gulp.watch(publicFolder + 'couchmover.html', ['copy-couchmover']);
   gulp.watch('modules/**/*', ['copy-modules']);
   gulp.watch('index.js', ['copy-node-index']);
 });
