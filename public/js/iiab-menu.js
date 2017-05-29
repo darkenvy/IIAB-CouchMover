@@ -1,7 +1,16 @@
 // iiab-menu.js
 // copyright 2017 Tim Moody
-
+var menuItems = [];
 // debug
+$.ajax({
+	type: 'GET',
+	async: false, // yes I know. Need to reflow code anyways. Temp.
+	url: '/home/active_packs.json',
+	dataType: 'json'
+}).then(function(data) {
+	menuItems = data;
+})
+
 
 if(typeof debug == 'undefined') {
 	debug = false;
