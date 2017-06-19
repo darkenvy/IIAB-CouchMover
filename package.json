@@ -14,5 +14,8 @@
     "dotenv": "^4.0.0",
     "gulp": "^3.9.1",
     "gulp-ssh": "^0.6.0"
+  },
+  "dependencies": {
+    "async": "^2.4.1"
   }
 }

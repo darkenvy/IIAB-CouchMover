@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Couchmover</title>
+  <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="css/iiab-couchmover.css">
+  <script src="js/vendor/angular.min.1.6.1.js"></script>
+  <script src="js/couchmover.2.0.js"></script>
+</head>
+<body ng-app="CouchMover" ng-controller="MainCtrl" class="container">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 box">
+    <input ng-model="editTitle" ng-disabled="!editTitle" 
+           type="text" name="title" 
+           class="col-xs-12 col-sm-12 col-md-12 col-lg-12 editable" />
+    <textarea ng-bind-html="editDesc" contenteditable="true" 
+              ng-model="editDesc" ng-disabled="!editTitle" 
+              name="desc" id="desc" cols="30" rows="6" 
+              class="col-xs-12 col-sm-12 col-md-12 col-lg-12 editable"
+              /></textarea>
+    <button ng-click="cancel()" ng-if="editTitle" class="btn btn-secondary">Cancel</button>
+    <button ng-click="save()" ng-if="editTitle" class="btn btn-warning">Save</button>
+  </div>
+  
+  <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <li ng-repeat="pack in activePacks track by $index" 
+        class="list-unstyled box col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+        <h2>{{pack.title}}</h2>
+      </div>
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
+        <small class="text-right">{{pack.menu_item_name}}</small>
+      </div>
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
+        <small class="text-right">lang: {{pack.lang}}</small>
+      </div>
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
+        <small class="text-right">pack type: {{pack.intended_use}}</small>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <p>{{pack.description}}</p>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <button ng-click="edit(this)" class="btn btn-primary">Edit</button>
+      </div>
+    </li>
+  </ul>
+</body>
+</html>

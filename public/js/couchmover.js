@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
   var el = document.getElementById('items');
   var sortable = Sortable.create(el); // jshint ignore:line
-
+  
   document.getElementById('submit').addEventListener('click', function() {
     var finalOrder = [];
     var list = document.getElementById('items').children

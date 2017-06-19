@@ -1,0 +1,23 @@
+/** {
+   bordeR: 1px solid red; 
+}*/
+
+body {
+  background-color: #C7FDAB;
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12pt;
+}
+
+h2 { font-size: 150%; color: #194899; }
+
+.box {
+  padding: 10px 0 10px 0;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  margin-bottom: 2px;
+  background-color: #fff;
+}
+
+.editable[disabled] {
+  cursor: not-allowed;
+}
